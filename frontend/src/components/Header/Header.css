@@ -1,0 +1,180 @@
+.header {
+    height: 37vw;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.header::before,
+.header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation: none; /* We’ll use real layered divs for smooth effect */
+}
+
+/* Create fake background layers inside header */
+.header .bg1,
+.header .bg2,
+.header .bg3,
+.header .bg4 {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeBg 12s infinite;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    border-radius: 30px;
+    z-index: 0;
+}
+
+.header .bg1 { background-image: url('/header_img1.jpg'); animation-delay: 0s; }
+.header .bg2 { background-image: url('/header_img2.jpg'); animation-delay: 3s; }
+.header .bg3 { background-image: url('/header_img3.jpg'); animation-delay: 6s; }
+.header .bg4 { background-image: url('/header_img4.jpg'); animation-delay: 9s; }
+
+@keyframes fadeBg {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Content */
+.header-contents {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    color: white;
+    text-shadow: 1px 2px 2px black;
+    font-size: max(4.5vw, 22px);
+}
+
+.header-contents p {
+    color: white;
+    text-shadow: 1px 2px 2px black;
+    font-size: 1vw;
+}
+
+.header-contents button {
+    border: none;
+    color: #747474;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 65%;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}
+
+
+
+
+.header-contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: 1.3;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.5px;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    position: relative;
+    z-index: 0;
+
+}
+
+
+.header-contents p{
+    color: white;
+    text-shadow: 1px 2px 2px black;
+    font-size: 1vw;
+}
+
+.header-contents button{
+    border: none;
+    color: #747474;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+:root .buttonwl {
+    color: black;
+}
+
+.lightcolors .buttonwl {
+    color: #747474;
+}
+
+
+@media (max-width:1050px) {
+    .header-contents{
+        max-width: 45%;
+    }
+}
+
+@media (max-width:750px) {
+    .header-contents{
+        max-width: 65%;
+    }
+    .header-contents p{
+        display: none;
+    }
+    .header-contents button{
+        padding: 2vw 4vw;
+    }
+}

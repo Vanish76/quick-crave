@@ -1,0 +1,109 @@
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.explore-menu h1 {
+    color: #262626;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.explore-menu-text {
+    max-width: 60%;
+    color: #262626;
+    font-size: 1.1rem;
+}
+
+/* 📌 Changed layout to Grid instead of Horizontal Scroll */
+.explore-menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 80%;
+    justify-content: center;
+}
+
+.explore-menu-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
+    padding: 10px;
+    animation: floatEffect 3s ease-in-out infinite; /* ✨ Floating effect added */
+}
+
+/* ✨ Floating Keyframes */
+@keyframes floatEffect {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 🖼️ Image Styling */
+.explore-menu-list-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* 🚀 Hover Effects */
+.explore-menu-list-item:hover {
+    transform: scale(1.1);
+}
+
+.explore-menu-list-item img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* 🔴 Active Category Style */
+.explore-menu-list-item.active {
+    background-color: rgba(255, 99, 71, 0.2);
+    border-radius: 50%;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-menu-list-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #505050;
+}
+
+.explore-menu hr {
+    width: 80%;
+    height: 2px;
+    background-color: bisque;
+    border: none;
+    margin-top: 20px;
+}
+:root .explore-menu h1 {
+    color: white;
+}
+:root .explore-menu-text {
+    color: var(--light-text-secondary);
+}
+:root .explore-menu-list-item p {
+    color: var(--light-text);
+}
+
+.lightcolors .explore-menu h1 {
+    color: #262626;
+}
+.lightcolors .explore-menu-text {
+    color: #808080;
+}
+.lightcolors .explore-menu-list-item p {
+    color: #505050;
+}
+

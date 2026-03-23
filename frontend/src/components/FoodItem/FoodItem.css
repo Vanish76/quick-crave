@@ -1,0 +1,151 @@
+.food-item {
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    position: relative;
+}
+
+.food-item-img-container {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Standard height for images */
+    transition: height 0.3s ease; /* Smooth transition for height change */
+}
+
+.food-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.3s ease; /* Smooth transform effect */
+}
+
+.food-item-info {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.food-item-name-rating {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.food-item-name-rating p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.food-item-name-rating img {
+    width: 70px;
+}
+
+.food-item-desc {
+    color: #676767;
+    font-size: 12px;
+    opacity: 1; /* Make description always visible */
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+}
+
+.food-item-price {
+    color: tomato;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0px;
+   
+}
+
+.food-item-img-container .add {
+    width: 35px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+    animation: bounceIcon .5s infinite;
+    background-color: rgba(0, 0, 0, 0.1); /* Light gray/black tint */
+    padding: 5px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+.food-item-counter {
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.food-item-counter img {
+    width: 30px;
+}
+
+.food-item:hover .food-item-image {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.food-item:hover .food-item-img-container {
+    height: 300px; /* Increase height on hover */
+}
+
+.food-item:hover .food-item-desc {
+    opacity: 0.8; /* Slight fade effect on hover (optional) */
+}
+
+:root .cartitemsp,
+:root .food-item-price,
+:root .food-item-desc,
+:root .ratingstars,
+:root .namewe {
+    color: white;
+}
+
+.lightcolors .food-item-desc {
+    color: grey;
+}
+
+.lightcolors .cartitemsp,
+.lightcolors .food-item-info,
+.lightcolors .food-item-price,
+.lightcolors .ratingstars,
+.lightcolors .namewe {
+    color: black;
+}
+
+:root .food-item-counter,
+:root .food-item-info {
+    background-color: rgb(36, 32, 32);
+}
+
+.lightcolors .food-item-counter,
+.lightcolors .food-item-info {
+    background-color: #FFFFFF;
+}
+
+:root .food-item-img-container .add {
+    background-color: black;
+}
+
+.lightcolors .food-item-img-container .add {
+    background-color: white;
+}
+@keyframes bounceIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}

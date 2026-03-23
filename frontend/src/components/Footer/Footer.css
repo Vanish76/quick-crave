@@ -1,0 +1,85 @@
+.footer {
+    color: #d9d9d9;
+    background-color: #1f2937; /* Professional dark navy */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 8vw;
+    padding-top: 80px;
+    margin-top: 100px;
+}
+
+.footer-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+}
+
+.footer-content-left,
+.footer-content-right,
+.footer-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.footer-content-left li,
+.footer-content-right li,
+.footer-content-center li {
+    list-style: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-content-left li:hover,
+.footer-content-right li:hover,
+.footer-content-center li:hover {
+    color: #94a3b8; /* Subtle hover color */
+}
+
+.footer-content-right h2,
+.footer-content-center h2 {
+    color: white;
+}
+
+.footer hr {
+    width: 100%;
+    height: 2px;
+    margin: 20px 0;
+    background-color: #dde0e6; /* Slightly lighter divider */
+    border: none;
+}
+
+/* Theme-specific background updates */
+:root .footer {
+    background-color: #1e293b; /* Even deeper navy */
+}
+
+.lightcolors .footer {
+    background-color: #334155; /* Muted blue-gray for light theme */
+}
+
+:root .tomatologofooter {
+    filter: var(--logos-filter);
+}
+
+.lightcolors .tomatologofooter {
+    filter: none;
+}
+
+/* Responsive Design */
+@media (max-width: 750px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+    }
+}
